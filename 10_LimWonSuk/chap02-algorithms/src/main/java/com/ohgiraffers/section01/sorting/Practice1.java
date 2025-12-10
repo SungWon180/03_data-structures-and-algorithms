@@ -1,0 +1,40 @@
+package com.ohgiraffers.section01.sorting;
+
+import java.util.Arrays;
+
+/* 최적화된 버블 정렬 구현하기
+ * - 버블 정렬은 인접한 두 요소를 비교하여 정렬하기때문에
+ * 일반적으로 O(n^2)의 시간 복잡도를 갖는다.
+ * - 다만, 정렬이 어느 정도 되어있는 경우
+ * 불필요한 비교를 줄여서 O(n)까지 최적화(성능 개선) 할 수 있다.*/
+public class Practice1 {
+    public static void solution(int[] arr) {
+
+
+        System.out.println("초기 값 : " + Arrays.toString(arr));
+
+        boolean swapped = false; //스왑 여부 확인   // 스왑된 적 있나? 기본값 false // 반복문 안에 넣어도되는데 변수를 새로 만들어서 동작 추가되어 시간 더 걸림..
+
+
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1);
+                    swapped = true; // 스왑한 적 있음
+                }
+            }
+            if(!swapped){ // 스왑한 적이 없을 경우
+                break;
+            }
+
+            System.out.println((i + 1) + "번째 : " + Arrays.toString(arr)); // 몇 회차 반복인지 보여줌
+        }
+    }
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
