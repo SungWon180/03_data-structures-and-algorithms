@@ -189,6 +189,18 @@ public class C_ShortestPath {
         System.out.println("map[cx][cy] = " + map[cx][cy]);
       }
     }
+
+    System.out.println("<< MAP >>");
+    for(int i = 0 ; i < N ; i++){
+
+      for(int j = 0 ; j < M ; j++){
+        System.out.printf("%2d ",map[i][j]);
+      }
+
+      System.out.println();
+    }
+
+
     // Queue가 비면 모든 도달 가능한 칸 탐색 완료
   }
 }

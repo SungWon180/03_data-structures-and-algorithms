@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 public class D_QuickSortTest {
-    static int[] act1, exp1, act2, exp2, act3, exp3;
+    static int[] act1, exp1, act2, exp2, act3, exp3, exp4, act4;
 
     @BeforeAll // 다른 테스트가 하나도 시작하기 전에
     static void setUp(){
@@ -20,12 +20,15 @@ public class D_QuickSortTest {
         exp2 = new int[]{2, 4, 22, 31, 33, 51, 122};
         act3 = new int[]{306, 99, 267, 21, 196, 56, 319, 131, 233, 305};
         exp3 = new int[]{21, 56, 99, 131, 196, 233, 267, 305, 306, 319};
+        act4 = new int[]{111, 265, 198, 232, 238, 155, 351, 62, 252, 367, 313, 262, 322, 32, 78, 228, 65, 228, 335, 92, 351, 202, 96, 149, 144, 331, 272, 41, 77, 29};
+        exp4 = new int[]{29, 32, 41, 62, 65, 77, 78, 92, 96, 111, 144, 149, 155, 198, 202, 228, 228, 232, 238, 252, 262, 265, 272, 313, 322, 331, 335, 351, 351, 367};
     }
     static Stream<Arguments> provideAscendingSource(){
         return Stream.of(
                 Arguments.of(act1, exp1),
                 Arguments.of(act2, exp2),
-                Arguments.of(act3, exp3)
+                Arguments.of(act3, exp3),
+                Arguments.of(act4, exp4)
 
 
         );
